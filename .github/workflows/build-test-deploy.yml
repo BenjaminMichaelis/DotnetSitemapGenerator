@@ -59,7 +59,7 @@ jobs:
       run: dotnet pack -p:PackageVersion=${{ env.nugetVersion }} --configuration Release -o ${{env.DOTNET_ROOT}}/DotnetSitemapGenerator --no-build 
     - name: Upload Artifacts
       if: startsWith(github.ref, 'refs/tags/v')
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: NuGet
         path: ${{env.DOTNET_ROOT}}/DotnetSitemapGenerator
