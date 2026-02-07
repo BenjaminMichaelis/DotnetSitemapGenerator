@@ -1,7 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
+    <!-- Nullable warnings instead of errors - fix incrementally -->
+    <Nullable>warnings</Nullable>
   </PropertyGroup>
 
   <ItemGroup>

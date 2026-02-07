@@ -60,16 +60,15 @@ namespace DotnetSitemapGenerator.Tests
                 if ( supportedMethodNames.Contains(methodName))
                 {
                     Expression argument = methodCallExpression.Arguments.ElementAt(1);
-                    if (argument is ConstantExpression)
+                    if (argument is ConstantExpression constantExpression)
                     {
-                        ConstantExpression constantExpression = argument as ConstantExpression;
                         if (methodName == "Skip")
                         {
-                            SkippedItemCount = (int) constantExpression.Value;
+                            SkippedItemCount = (int)(constantExpression.Value ?? 0);
                         }
                         if (methodName == "Take")
                         {
-                            TakenItemCount = (int)constantExpression.Value;
+                            TakenItemCount = (int)(constantExpression.Value ?? 0);
                         }
                         return (IQueryable<TElement>)this;
                     }
