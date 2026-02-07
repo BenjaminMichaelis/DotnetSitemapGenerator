@@ -34,6 +34,6 @@ namespace DotnetSitemapGenerator.Videos
         /// Allowed values are country codes in ISO 3166 format. 
         /// </summary>
         [XmlText]
-        public string Countries { get; set; }
+        public string Countries { get; set; } = null!;
     }
 }

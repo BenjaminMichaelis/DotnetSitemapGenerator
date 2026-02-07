@@ -18,18 +18,18 @@ namespace DotnetSitemapGenerator.Website.Controllers
             dataBuilder = new TestDataBuilder();
         }
 
-        
+
         public ActionResult Index()
         {
             return sitemapProvider.CreateSitemapIndex(new SitemapIndexModel(new List<SitemapIndexNode>
             {
-                new SitemapIndexNode(Url.Action("Default")),
-                new SitemapIndexNode(Url.Action("Image")),
-                new SitemapIndexNode(Url.Action("Video")),
-                new SitemapIndexNode(Url.Action("News")),
-                new SitemapIndexNode(Url.Action("Translation")),
-                new SitemapIndexNode(Url.Action("StyleSheet")),
-                new SitemapIndexNode(Url.Action("Huge")),
+                new SitemapIndexNode(Url.Action("Default") ?? string.Empty),
+                new SitemapIndexNode(Url.Action("Image") ?? string.Empty),
+                new SitemapIndexNode(Url.Action("Video") ?? string.Empty),
+                new SitemapIndexNode(Url.Action("News") ?? string.Empty),
+                new SitemapIndexNode(Url.Action("Translation") ?? string.Empty),
+                new SitemapIndexNode(Url.Action("StyleSheet") ?? string.Empty),
+                new SitemapIndexNode(Url.Action("Huge") ?? string.Empty),
             }));
         }
 

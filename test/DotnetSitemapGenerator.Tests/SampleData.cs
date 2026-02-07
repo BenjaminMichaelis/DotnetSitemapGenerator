@@ -1,7 +1,6 @@
-﻿namespace DotnetSitemapGenerator.Tests
+﻿namespace DotnetSitemapGenerator.Tests;
+
+public class SampleData
 {
-    public class SampleData
-    {
-        public string Title { get; set; } 
-    }
+    public string? Title { get; set; } 
 }

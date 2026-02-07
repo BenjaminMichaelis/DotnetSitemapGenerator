@@ -31,14 +31,14 @@ namespace DotnetSitemapGenerator.Videos
         ///  to enable autoplay of the video. For example: &lt;embed src="http://www.example.com/videoplayer.swf?video=123" autoplay="ap=1"/&gt;.
         /// </summary>
         [XmlAttribute("autoplay")]
-        public string Autoplay { get; set; }
+        public string? Autoplay { get; set; }
 
 
         /// <summary>
         /// A URL pointing to a player for a specific video. 
         /// </summary>
         [XmlText, Url]
-        public string Url { get; set; }
+        public string Url { get; set; } = null!;
 
 
         /// <summary>

@@ -28,7 +28,7 @@ namespace DotnetSitemapGenerator.News
         /// For example, if the name appears in Google News as "The Example Times (subscription)", you should use the name, "The Example Times".
         /// </summary>
         [XmlElement("name")]
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
 
 
         /// <summary>
@@ -37,6 +37,6 @@ namespace DotnetSitemapGenerator.News
         /// Exception: For Chinese, please use zh-cn for Simplified Chinese or zh-tw for Traditional Chinese.
         /// </summary>
         [XmlElement("language")]
-        public string Language { get; set; }
+        public string Language { get; set; } = null!;
     }
 }

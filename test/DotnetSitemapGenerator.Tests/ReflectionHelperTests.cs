@@ -29,21 +29,21 @@ namespace DotnetSitemapGenerator.Tests
         private class SampleType2
         {
             [Url]
-            public string Url { get; set; }
+            public string? Url { get; set; }
 
-            public string Title { get; set; }
-
-            [Url]
-            public string Url4 => null;
+            public string? Title { get; set; }
 
             [Url]
-            public string Url5 { set { } }
+            public string? Url4 => null;
+
+            [Url]
+            public string? Url5 { set { } }
 
             [Url]
             public int Url2 { get; set; }
 
             [Url]
-            public SampleType2 Url3 { get; set; }
+            public SampleType2? Url3 { get; set; }
         }
 
         [Fact]
@@ -56,12 +56,12 @@ namespace DotnetSitemapGenerator.Tests
 
         private class SampleType3
         {
-            public List<SampleType1> List1 { get; set; }
+            public List<SampleType1>? List1 { get; set; }
             [Url]
-            public SampleType1[] List2 { get; set; }
-            public SampleType1 Item { get; set; }
-            public IEnumerable List3 { get; set; }
-            public IEnumerable<SampleType2> List4 { set { } }
+            public SampleType1[]? List2 { get; set; }
+            public SampleType1? Item { get; set; }
+            public IEnumerable? List3 { get; set; }
+            public IEnumerable<SampleType2>? List4 { set { } }
         }
 
         [Fact]
@@ -75,13 +75,13 @@ namespace DotnetSitemapGenerator.Tests
 
         private class SampleType4
         {
-            public SampleType1 SampleType1 { get; set; }
+            public SampleType1? SampleType1 { get; set; }
             [Url]
-            public SampleType2 SampleType2 { get; set; }
+            public SampleType2? SampleType2 { get; set; }
 
-            public string S { get; set; }
+            public string? S { get; set; }
 
-            public SampleType3 SampleType3 { set { } }
+            public SampleType3? SampleType3 { set { } }
         }
 
         [Fact]

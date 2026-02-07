@@ -10,10 +10,10 @@ namespace DotnetSitemapGenerator
 {
     class XmlResult<T> : ActionResult
     {
-        private readonly IBaseUrlProvider baseUrlProvider;
+        private readonly IBaseUrlProvider? baseUrlProvider;
         private readonly T data;
         private readonly IUrlValidator urlValidator;
-        private string FilePath { get; } = null;
+        private string? FilePath { get; }
         private bool Readable { get; } = false;
 
 
@@ -38,7 +38,10 @@ namespace DotnetSitemapGenerator
 
         public override async Task ExecuteResultAsync(ActionContext context)
         {
-            urlValidator.ValidateUrls(data, baseUrlProvider ?? new BaseUrlProvider(context.HttpContext.Request));
+            if (data is not null)
+            {
+                urlValidator.ValidateUrls(data, baseUrlProvider ?? new BaseUrlProvider(context.HttpContext.Request));
+            }
 
             var response = context.HttpContext.Response;
             response.ContentType = "application/xml";

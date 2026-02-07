@@ -27,7 +27,7 @@ namespace DotnetSitemapGenerator.Tests
         [Fact]
         public void CreateSitemapIndex_SitemapProviderIsNull_ThrowsException()
         {
-            Action act = () => dynamicSitemapIndexProvider.CreateSitemapIndex(null, sitemapIndexConfiguration.Object);
+            Action act = () => dynamicSitemapIndexProvider.CreateSitemapIndex(null!, sitemapIndexConfiguration.Object);
 
             act.Should().Throw<ArgumentNullException>();
         }
@@ -36,7 +36,7 @@ namespace DotnetSitemapGenerator.Tests
         [Fact]
         public void CreateSitemapIndex_SitemapIndexConfigurationIsNull_ThrowsException()
         {
-            Action act = () => dynamicSitemapIndexProvider.CreateSitemapIndex<SampleData>(sitemapProvider.Object, null);
+            Action act = () => dynamicSitemapIndexProvider.CreateSitemapIndex<SampleData>(sitemapProvider.Object, null!);
 
             act.Should().Throw<ArgumentNullException>();
         }
@@ -149,7 +149,7 @@ namespace DotnetSitemapGenerator.Tests
             sitemapIndexConfiguration.Setup(configuration => configuration.UseReverseOrderingForSitemapIndexNodes).Returns(value);
         }
 
-        private void SetStyleSheets(StyleSheetType styleSheetType, List<XmlStyleSheet> styleSheets = null)
+        private void SetStyleSheets(StyleSheetType styleSheetType, List<XmlStyleSheet>? styleSheets = null)
         {
             var setup = styleSheetType == StyleSheetType.Sitemap
                     ? sitemapIndexConfiguration.Setup(configuration => configuration.SitemapStyleSheets)
