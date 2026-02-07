@@ -30,7 +30,7 @@ namespace DotnetSitemapGenerator.Serialization
             }
         }
 
-        private void WriteAttribute(StringBuilder stringBuilder, string attributeName, string value)
+        private void WriteAttribute(StringBuilder stringBuilder, string attributeName, string? value)
         {
             if (!string.IsNullOrWhiteSpace(value))
             {

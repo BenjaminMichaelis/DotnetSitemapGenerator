@@ -11,6 +11,6 @@ namespace DotnetSitemapGenerator.StyleSheets
         /// <summary>
         /// XML style sheets
         /// </summary>
-        List<XmlStyleSheet> StyleSheets { get; set; }
+        List<XmlStyleSheet>? StyleSheets { get; set; }
     }
 }

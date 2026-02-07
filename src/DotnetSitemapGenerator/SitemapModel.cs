@@ -12,7 +12,10 @@ namespace DotnetSitemapGenerator
     [XmlRoot("urlset", Namespace = XmlNamespaces.Sitemap)]
     public class SitemapModel : IXmlNamespaceProvider, IHasStyleSheets
     {
-        internal SitemapModel() { }
+        internal SitemapModel() 
+        { 
+            Nodes = [];
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SitemapModel"/> class.
@@ -61,6 +64,6 @@ namespace DotnetSitemapGenerator
 
         /// <inheritdoc/>
         [XmlIgnore]
-        public List<XmlStyleSheet> StyleSheets { get; set; }
+        public List<XmlStyleSheet>? StyleSheets { get; set; }
     }
 }

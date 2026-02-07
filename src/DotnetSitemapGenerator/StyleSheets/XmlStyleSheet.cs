@@ -29,17 +29,17 @@
         /// <summary>
         /// Title of the style sheet.
         /// </summary>
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         /// <summary>
         /// The media which the stylesheet applies.
         /// </summary>
-        public string Media { get; set; }
+        public string? Media { get; set; }
 
         /// <summary>
         /// Character encoding of the style sheet.
         /// </summary>
-        public string Charset { get; set; }
+        public string? Charset { get; set; }
 
         /// <summary>
         /// Specifies if the style sheet is an alternative style sheet.

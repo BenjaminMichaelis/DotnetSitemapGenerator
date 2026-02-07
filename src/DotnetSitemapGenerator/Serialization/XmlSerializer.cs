@@ -49,8 +49,8 @@ namespace DotnetSitemapGenerator.Serialization
 
         private void SerializeToStream<T>(T data, Func<XmlWriterSettings, XmlWriter> createXmlWriter, bool readable = false)
         {
-            IXmlNamespaceProvider namespaceProvider = data as IXmlNamespaceProvider;
-            IEnumerable<string> namespaces = namespaceProvider != null ? namespaceProvider.GetNamespaces() : Enumerable.Empty<string>();
+            IXmlNamespaceProvider? namespaceProvider = data as IXmlNamespaceProvider;
+            IEnumerable<string> namespaces = namespaceProvider?.GetNamespaces() ?? Enumerable.Empty<string>();
             XmlSerializerNamespaces xmlSerializerNamespaces = xmlNamespaceBuilder.Create(namespaces);
 
             var xmlSerializer = new System.Xml.Serialization.XmlSerializer(typeof(T));
@@ -68,9 +68,9 @@ namespace DotnetSitemapGenerator.Serialization
 
             using (XmlWriter writer = createXmlWriter(xmlWriterSettings))
             {
-                if (data is IHasStyleSheets)
+                if (data is IHasStyleSheets styleSheets)
                 {
-                    xmlProcessingInstructionHandler.AddStyleSheets(writer, data as IHasStyleSheets);
+                    xmlProcessingInstructionHandler.AddStyleSheets(writer, styleSheets);
                 }
 
                 xmlSerializer.Serialize(writer, data, xmlSerializerNamespaces);

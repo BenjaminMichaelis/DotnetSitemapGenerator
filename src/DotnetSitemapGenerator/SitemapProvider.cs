@@ -8,7 +8,7 @@ namespace DotnetSitemapGenerator
     /// <inheritdoc/>
     public class SitemapProvider : ISitemapProvider
     {
-        private readonly IBaseUrlProvider baseUrlProvider;
+        private readonly IBaseUrlProvider? baseUrlProvider;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SitemapProvider"/> class.
@@ -35,7 +35,7 @@ namespace DotnetSitemapGenerator
                 throw new ArgumentNullException(nameof(sitemapModel));
             }
 
-            return new XmlResult<SitemapModel>(sitemapModel, baseUrlProvider);
+            return new XmlResult<SitemapModel>(sitemapModel, baseUrlProvider!);
         }
 
         /// <inheritdoc/>
@@ -46,7 +46,7 @@ namespace DotnetSitemapGenerator
                 throw new ArgumentNullException(nameof(sitemapModel));
             }
 
-            return new XmlResult<SitemapModel>(sitemapModel, baseUrlProvider, fileLocation);
+            return new XmlResult<SitemapModel>(sitemapModel, baseUrlProvider!, fileLocation);
         }
 
 
@@ -58,7 +58,7 @@ namespace DotnetSitemapGenerator
                 throw new ArgumentNullException(nameof(sitemapIndexModel));
             }
 
-            return new XmlResult<SitemapIndexModel>(sitemapIndexModel, baseUrlProvider);
+            return new XmlResult<SitemapIndexModel>(sitemapIndexModel, baseUrlProvider!);
         }
     }
 }

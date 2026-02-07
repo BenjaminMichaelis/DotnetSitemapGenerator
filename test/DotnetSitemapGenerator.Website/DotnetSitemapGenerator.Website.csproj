@@ -2,8 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-    <!-- Nullable warnings instead of errors - fix incrementally -->
-    <Nullable>warnings</Nullable>
+    <!-- Nullable inherited from Directory.Build.props -->
   </PropertyGroup>
 
   <ItemGroup>

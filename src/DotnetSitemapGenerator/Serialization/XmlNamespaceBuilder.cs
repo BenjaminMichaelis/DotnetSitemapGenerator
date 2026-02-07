@@ -26,7 +26,7 @@ namespace DotnetSitemapGenerator.Serialization
 
             foreach (var ns in namespaces)
             {
-                string prefix;
+                string? prefix;
                 if (prefixList.TryGetValue(ns, out prefix))
                 {
                     result.Add(prefix, ns);

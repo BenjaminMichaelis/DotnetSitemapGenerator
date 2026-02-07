@@ -28,21 +28,21 @@ namespace DotnetSitemapGenerator.Translations
         /// The URL of the alternative language version of the URL
         /// </summary>
         [XmlAttribute("href"), Url]
-        public string Url { get; set; }
+        public string Url { get; set; } = null!;
 
 
         /// <summary>
         /// Defaults to alternate
         /// </summary>
         [XmlAttribute("rel")]
-        public string Rel { get; set; }
+        public string Rel { get; set; } = null!;
 
 
         /// <summary>
         /// The locale of the alternative version, e.g. de-DE
         /// </summary>
         [XmlAttribute("hreflang")]
-        public string Language { get; set; }
+        public string Language { get; set; } = null!;
 
     }
 }

@@ -8,12 +8,12 @@ namespace DotnetSitemapGenerator.Routing
     class UrlValidator : IUrlValidator
     {
         private readonly IReflectionHelper reflectionHelper;
-        private readonly Dictionary<Type, UrlPropertyModel> propertyModelList;
+        private readonly Dictionary<Type, UrlPropertyModel?> propertyModelList;
 
         public UrlValidator(IReflectionHelper reflectionHelper)
         {
             this.reflectionHelper = reflectionHelper;
-            propertyModelList = new Dictionary<Type, UrlPropertyModel>();
+            propertyModelList = new Dictionary<Type, UrlPropertyModel?>();
         }
 
         public void ValidateUrls(object item, IBaseUrlProvider baseUrlProvider)
@@ -38,7 +38,7 @@ namespace DotnetSitemapGenerator.Routing
 
             foreach (PropertyInfo classProperty in urlPropertyModel.ClassProperties)
             {
-                object value = classProperty.GetValue(item, null);
+                object? value = classProperty.GetValue(item, null);
                 if (value != null)
                 {
                     ValidateUrls(value, baseUrlProvider);
@@ -47,7 +47,7 @@ namespace DotnetSitemapGenerator.Routing
 
             foreach (PropertyInfo enumerableProperty in urlPropertyModel.EnumerableProperties)
             {
-                IEnumerable value = enumerableProperty.GetValue(item, null) as IEnumerable;
+                IEnumerable? value = enumerableProperty.GetValue(item, null) as IEnumerable;
                 if (value != null)
                 {
                     foreach (object obj in value)
@@ -62,25 +62,25 @@ namespace DotnetSitemapGenerator.Routing
 
         private UrlPropertyModel GetPropertyModel(Type type)
         {
-            UrlPropertyModel result;
+            UrlPropertyModel? result;
             if (!propertyModelList.TryGetValue(type, out result))
             {
                 result = reflectionHelper.GetPropertyModel(type);
                 propertyModelList[type] = result;
             }
 
-            return result;
+            return result!;
         }
 
         private void CheckForRelativeUrls(object item, PropertyInfo propertyInfo, IBaseUrlProvider baseUrlProvider)
         {
-            object value = propertyInfo.GetValue(item, null);
+            object? value = propertyInfo.GetValue(item, null);
             if (value != null)
             {
-                string url = value.ToString();
+                string? url = value.ToString();
                 if (!Uri.IsWellFormedUriString(url, UriKind.Absolute) && Uri.IsWellFormedUriString(url, UriKind.Relative))
                 {
-                    string absoluteUrl = $"{baseUrlProvider.BaseUrl.ToString().TrimEnd('/')}/{url.TrimStart('/')}";
+                    string absoluteUrl = $"{baseUrlProvider.BaseUrl.ToString().TrimEnd('/')}/{url!.TrimStart('/')}";
                     propertyInfo.SetValue(item, absoluteUrl, null);
                 }
             }

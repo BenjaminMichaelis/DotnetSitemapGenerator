@@ -24,7 +24,7 @@ namespace DotnetSitemapGenerator.Videos
         /// The required attribute currency specifies the currency in ISO 4217 format.
         /// </summary>
         [XmlAttribute("currency")]
-        public string Currency { get; set; }
+        public string Currency { get; set; } = null!;
 
 
         /// <summary>

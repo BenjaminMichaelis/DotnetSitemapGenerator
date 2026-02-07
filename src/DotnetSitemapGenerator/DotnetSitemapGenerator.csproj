@@ -9,8 +9,7 @@
 		<PackageTags>Sitemap, XML, SitemapGenerator, Sitemap.xml</PackageTags>
 		<RepositoryType>git</RepositoryType>
 		<Deterministic>true</Deterministic>
-		<!-- Nullable warnings instead of errors - fix incrementally -->
-		<Nullable>warnings</Nullable>
+		<!-- Nullable inherited from Directory.Build.props -->
 	</PropertyGroup>
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />

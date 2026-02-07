@@ -1,28 +1,26 @@
-﻿using System.Linq;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using DotnetSitemapGenerator.Website.Models;
 
-namespace DotnetSitemapGenerator.Website.SampleBusiness
+namespace DotnetSitemapGenerator.Website.SampleBusiness;
+
+public class ProductSitemapIndexConfiguration : SitemapIndexConfiguration<Product>
 {
-    public class ProductSitemapIndexConfiguration : SitemapIndexConfiguration<Product>
+    private readonly IUrlHelper urlHelper;
+
+    public ProductSitemapIndexConfiguration(IQueryable<Product> dataSource, int? currentPage, IUrlHelper urlHelper)
+        : base(dataSource, currentPage)
     {
-        private readonly IUrlHelper urlHelper;
+        this.urlHelper = urlHelper;
+        Size = 45;
+    }
 
-        public ProductSitemapIndexConfiguration(IQueryable<Product> dataSource, int? currentPage, IUrlHelper urlHelper)
-            : base(dataSource, currentPage)
-        {
-            this.urlHelper = urlHelper;
-            Size = 45;
-        }
+    public override SitemapIndexNode CreateSitemapIndexNode(int currentPage)
+    {
+        return new SitemapIndexNode(urlHelper.Action("Index", "Product", new { id = currentPage }) ?? string.Empty);
+    }
 
-        public override SitemapIndexNode CreateSitemapIndexNode(int currentPage)
-        {
-            return new SitemapIndexNode(urlHelper.Action("Index", "Product", new { id = currentPage }));
-        }
-
-        public override SitemapNode CreateNode(Product source)
-        {
-            return new SitemapNode(urlHelper.Action("Detail", "Product", new { id = source.Id }));
-        }
+    public override SitemapNode CreateNode(Product source)
+    {
+        return new SitemapNode(urlHelper.Action("Detail", "Product", new { id = source.Id }) ?? string.Empty);
     }
 }

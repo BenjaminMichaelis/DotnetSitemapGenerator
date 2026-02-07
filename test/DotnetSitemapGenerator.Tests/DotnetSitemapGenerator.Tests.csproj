@@ -5,8 +5,7 @@
     <IsPackable>false</IsPackable>
     <IsPublishable>false</IsPublishable>
     <IsTestProject>true</IsTestProject>
-    <!-- Nullable warnings instead of errors - fix incrementally -->
-    <Nullable>warnings</Nullable>
+    <!-- Nullable inherited from Directory.Build.props -->
   </PropertyGroup>
 
   <ItemGroup>

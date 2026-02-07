@@ -11,7 +11,10 @@ namespace DotnetSitemapGenerator
     [XmlRoot("sitemapindex", Namespace = XmlNamespaces.Sitemap)]
     public class SitemapIndexModel : IHasStyleSheets
     {
-        internal SitemapIndexModel() { }
+        internal SitemapIndexModel() 
+        { 
+            Nodes = [];
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SitemapIndexModel"/> class.
@@ -30,6 +33,6 @@ namespace DotnetSitemapGenerator
 
         /// <inheritdoc/>
         [XmlIgnore]
-        public List<XmlStyleSheet> StyleSheets { get; set; }
+        public List<XmlStyleSheet>? StyleSheets { get; set; }
     }
 }

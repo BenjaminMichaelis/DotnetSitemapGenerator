@@ -28,7 +28,7 @@ namespace DotnetSitemapGenerator
         /// This location can be a Sitemap, an Atom file, RSS file or a simple text file.
         /// </summary>
         [XmlElement("loc", Order = 1), Url]
-        public string Url { get; set; }
+        public string Url { get; set; } = null!;
 
         
         /// <summary>

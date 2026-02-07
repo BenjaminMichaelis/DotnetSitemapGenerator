@@ -50,7 +50,7 @@ namespace DotnetSitemapGenerator.Videos
         /// We recommend images in .jpg, .png, or. gif formats.
         /// </summary>
         [XmlElement("thumbnail_loc", Order = 1), Url]
-        public string ThumbnailUrl { get; set; }
+        public string ThumbnailUrl { get; set; } = null!;
 
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace DotnetSitemapGenerator.Videos
         /// The title must be in plain text only, and any HTML entities should be escaped or wrapped in a CDATA block.
         /// </summary>
         [XmlElement("title", Order = 2)]
-        public string Title { get; set; }
+        public string Title { get; set; } = null!;
 
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace DotnetSitemapGenerator.Videos
         /// The description must be in plain text only, and any HTML entities should be escaped or wrapped in a CDATA block.
         /// </summary>
         [XmlElement("description", Order = 3)]
-        public string Description { get; set; }
+        public string Description { get; set; } = null!;
 
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace DotnetSitemapGenerator.Videos
         /// Best practice: Ensure that only Googlebot accesses your content by using a reverse DNS lookup.
         /// </summary>
         [XmlElement("content_loc", Order = 4), Url]
-        public string ContentUrl { get; set; }
+        public string? ContentUrl { get; set; }
 
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace DotnetSitemapGenerator.Videos
         /// Usually this is the information in the src element of an &lt;embed&gt; tag and should not be the same as the content of the &lt;loc&gt; tag. ​
         /// </summary>
         [XmlElement("player_loc", Order = 5)]
-        public VideoPlayer Player { get; set; }
+        public VideoPlayer? Player { get; set; }
 
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace DotnetSitemapGenerator.Videos
         /// Create a new &lt;video:tag&gt; element for each tag associated with a video. A maximum of 32 tags is permitted.
         /// </summary>
         [XmlElement("tag", Order = 12)]
-        public string[] Tags { get; set; }
+        public string[]? Tags { get; set; }
 
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace DotnetSitemapGenerator.Videos
         /// For example, a site about cooking could have categories for Broiling, Baking, and Grilling.
         /// </summary>
         [XmlElement("category", Order = 13)]
-        public string Category { get; set; }
+        public string? Category { get; set; }
 
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace DotnetSitemapGenerator.Videos
         /// it is assumed that the video can be played in all territories.
         /// </summary>
         [XmlElement("restriction", Order = 14)]
-        public VideoRestriction Restriction { get; set; }
+        public VideoRestriction? Restriction { get; set; }
 
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace DotnetSitemapGenerator.Videos
         /// Only one &lt;video:gallery_loc&gt; tag can be listed for each video.
         /// </summary>
         [XmlElement("gallery_loc", Order = 15)]
-        public VideoGallery Gallery { get; set; }
+        public VideoGallery? Gallery { get; set; }
 
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace DotnetSitemapGenerator.Videos
         /// More than one &lt;video:price&gt; element can be listed (for example, in order to specify various currencies, purchasing options, or resolutions).
         /// </summary>
         [XmlElement("price", Order = 16)]
-        public List<VideoPrice> Prices { get; set; }
+        public List<VideoPrice>? Prices { get; set; }
 
 
         /// <summary>
@@ -188,7 +188,7 @@ namespace DotnetSitemapGenerator.Videos
         /// The video uploader's name. Only one &lt;video:uploader&gt; is allowed per video.
         /// </summary>
         [XmlElement("uploader", Order = 18)]
-        public VideoUploader Uploader { get; set; }
+        public VideoUploader? Uploader { get; set; }
 
 
         /// <summary>
@@ -198,7 +198,7 @@ namespace DotnetSitemapGenerator.Videos
         /// If there is no &lt;video:platform&gt; tag, it is assumed that the video can be played on all platforms.
         /// </summary>
         [XmlElement("platform", Order = 19)]
-        public string Platform { get; set; }
+        public string? Platform { get; set; }
 
 
         /// <summary>

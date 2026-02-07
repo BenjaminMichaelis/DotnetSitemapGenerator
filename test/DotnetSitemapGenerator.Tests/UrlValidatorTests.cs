@@ -23,20 +23,20 @@ namespace DotnetSitemapGenerator.Tests
         private class SampleType1
         {
             [Url]
-            public string Url { get; set; }
+            public string? Url { get; set; }
         }
 
         [Fact]
         public void ValidateUrls_ItemIsNull_ThrowsException()
         {
-            Action act = () => urlValidator.ValidateUrls(null, baseUrlProvider.Object);
+            Action act = () => urlValidator.ValidateUrls(null!, baseUrlProvider.Object);
             act.Should().Throw<ArgumentNullException>();
         }
 
         [Fact]
         public void ValidateUrls_BaseUrlProviderIsNull_ThrowsException()
         {
-            Action act = () => urlValidator.ValidateUrls(new SampleType1(), null);
+            Action act = () => urlValidator.ValidateUrls(new SampleType1(), null!);
             act.Should().Throw<ArgumentNullException>();
         }
 
@@ -100,7 +100,7 @@ namespace DotnetSitemapGenerator.Tests
 
         private class SampleType2
         {
-            public SampleType1 SampleType1 { get; set; }
+            public SampleType1? SampleType1 { get; set; }
         }
 
         [Fact]
@@ -111,7 +111,7 @@ namespace DotnetSitemapGenerator.Tests
 
             urlValidator.ValidateUrls(item, baseUrlProvider.Object);
 
-            item.SampleType1.Url.Should().Be("http://example.org/sitemap2");
+            item.SampleType1!.Url.Should().Be("http://example.org/sitemap2");
         }
 
         [Fact]
@@ -127,7 +127,7 @@ namespace DotnetSitemapGenerator.Tests
 
         private class SampleType3
         {
-            public SampleType1[] Items { get; set; }
+            public SampleType1[]? Items { get; set; }
         }
 
         [Fact]

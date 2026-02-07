@@ -35,10 +35,10 @@ namespace DotnetSitemapGenerator
         public abstract SitemapNode CreateNode(T source);
 
         /// <inheritdoc/>
-        public List<XmlStyleSheet> SitemapStyleSheets { get; protected set; }
+        public List<XmlStyleSheet>? SitemapStyleSheets { get; protected set; }
 
         /// <inheritdoc/>
-        public List<XmlStyleSheet> SitemapIndexStyleSheets { get; protected set; }
+        public List<XmlStyleSheet>? SitemapIndexStyleSheets { get; protected set; }
 
         /// <inheritdoc/>
         public bool UseReverseOrderingForSitemapIndexNodes { get; protected set; }

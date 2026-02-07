@@ -27,7 +27,7 @@ namespace DotnetSitemapGenerator.News
         /// Specifies the publication in which the article appears. 
         /// </summary>
         [XmlElement("publication", Order = 1)]
-        public NewsPublication Publication { get; set; }
+        public NewsPublication Publication { get; set; } = null!;
 
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace DotnetSitemapGenerator.News
         /// UserGenerated: newsworthy user-generated content which has already gone through a formal editorial review process on your site.
         /// </summary>
         [XmlElement("genres", Order = 3)]
-        public string Genres { get; set; }
+        public string? Genres { get; set; }
 
 
         /// <summary>
@@ -67,14 +67,14 @@ namespace DotnetSitemapGenerator.News
         /// Please make sure not to include the author name, the publication name, or publication date as part of the title tag.
         /// </summary>
         [XmlElement("title", Order = 5)]
-        public string Title { get; set; }
+        public string Title { get; set; } = null!;
 
 
         /// <summary>
         /// A comma-separated list of keywords describing the topic of the article. 
         /// </summary>
         [XmlElement("keywords", Order = 6)]
-        public string Keywords { get; set; }
+        public string? Keywords { get; set; }
 
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace DotnetSitemapGenerator.News
         /// For example, "NASDAQ:AMAT" (but not "NASD:AMAT"), or "BOM:500325" (but not "BOM:RIL").
         /// </summary>
         [XmlElement("stock_tickers", Order = 7)]
-        public string StockTickers { get; set; }
+        public string? StockTickers { get; set; }
 
 
         /// <summary>

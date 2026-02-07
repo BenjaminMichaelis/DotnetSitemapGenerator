@@ -41,12 +41,12 @@ namespace DotnetSitemapGenerator
         /// <summary>
         /// XML stylesheets that will be attached to the sitemap files.
         /// </summary>
-        List<XmlStyleSheet> SitemapStyleSheets { get; }
+        List<XmlStyleSheet>? SitemapStyleSheets { get; }
 
         /// <summary>
         /// XML stylesheets that will be attached to the sitemap index files.
         /// </summary>
-        List<XmlStyleSheet> SitemapIndexStyleSheets { get; }
+        List<XmlStyleSheet>? SitemapIndexStyleSheets { get; }
 
         /// <summary>
         /// Sitemap index node page indexes will be in descending order when set to true.

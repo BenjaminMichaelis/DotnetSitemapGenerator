@@ -19,7 +19,7 @@ namespace DotnetSitemapGenerator.Tests
         [Fact]
         public void CreateSitemap_SitemapModelIsNull_ThrowsException()
         {
-            Action act = () => sitemapProvider.CreateSitemap(null);
+            Action act = () => sitemapProvider.CreateSitemap(null!);
 
             act.Should().Throw<ArgumentNullException>();
         }
@@ -38,7 +38,7 @@ namespace DotnetSitemapGenerator.Tests
         [Fact]
         public void CreateSitemapIndex_SitemapIndexModelIsNull_ThrowsException()
         {
-            Action act = () => sitemapProvider.CreateSitemapIndex(null);
+            Action act = () => sitemapProvider.CreateSitemapIndex(null!);
 
             act.Should().Throw<ArgumentNullException>();
         }

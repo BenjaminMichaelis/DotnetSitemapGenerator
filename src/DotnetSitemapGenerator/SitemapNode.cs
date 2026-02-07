@@ -33,7 +33,7 @@ namespace DotnetSitemapGenerator
         /// This value must be less than 2,048 characters.
         /// </summary>
         [XmlElement("loc", Order = 1), Url]
-        public string Url { get; set; }
+        public string Url { get; set; } = null!;
 
 
         /// <summary>
@@ -69,20 +69,20 @@ namespace DotnetSitemapGenerator
         /// It can include up to 1000 images.
         /// </summary>
         [XmlElement("image", Order = 5, Namespace = XmlNamespaces.Image)]
-        public List<SitemapImage> Images { get; set; }
+        public List<SitemapImage>? Images { get; set; }
 
         /// <summary>
         /// Additional information about news article on the page.
         /// </summary>
         [XmlElement("news", Order = 6, Namespace = XmlNamespaces.News)]
-        public SitemapNews News { get; set; }
+        public SitemapNews? News { get; set; }
 
 
         /// <summary>
         /// Additional information about video content on the page.
         /// </summary>
         [XmlElement("video", Order = 7, Namespace = XmlNamespaces.Video)]
-        public List<SitemapVideo> Videos { get; set; }
+        public List<SitemapVideo>? Videos { get; set; }
 
         /// <summary>
         /// Adds information about a single video on the page.
@@ -92,14 +92,14 @@ namespace DotnetSitemapGenerator
         [Obsolete("Use Videos property to add videos")]
         public SitemapVideo Video
         {
-            set => Videos = new List<SitemapVideo> { value };
+            set => Videos = [value];
         }
 
         /// <summary>
         /// Alternative language versions of the URL
         /// </summary>
         [XmlElement("link", Order = 9, Namespace = XmlNamespaces.Xhtml)]
-        public List<SitemapPageTranslation> Translations { get; set; }
+        public List<SitemapPageTranslation>? Translations { get; set; }
 
         /// <summary>
         /// Used for not serializing null values.
