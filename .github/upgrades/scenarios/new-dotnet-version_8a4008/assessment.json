@@ -1,0 +1,307 @@
+{
+  "settings": {
+    "components": {
+      "code": true,
+      "binaries": false
+    },
+    "targetId": "net10.0",
+    "targetDisplayName": ".NETCoreApp,Version=v10.0"
+  },
+  "analysisStartTime": "2026-02-07T16:11:24.3040129Z",
+  "analysisEndTime": "2026-02-07T16:11:25.5950984Z",
+  "privacyModeHelpUrl": "https://go.microsoft.com/fwlink/?linkid=2270980",
+  "stats": {
+    "summary": {
+      "projects": 3,
+      "issues": 3,
+      "incidents": 6,
+      "effort": 6
+    },
+    "charts": {
+      "severity": {
+        "Mandatory": 4,
+        "Optional": 2,
+        "Potential": 0,
+        "Information": 0
+      },
+      "category": {
+        "NuGet": 4,
+        "Project": 2
+      }
+    }
+  },
+  "projects": [
+    {
+      "path": "src\\DotnetSitemapGenerator\\DotnetSitemapGenerator.csproj",
+      "startingProject": true,
+      "issues": 2,
+      "storyPoints": 3,
+      "properties": {
+        "appName": "DotnetSitemapGenerator",
+        "projectKind": "ClassLibrary",
+        "frameworks": [
+          "netstandard2.0"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "numberOfFiles": 47,
+        "numberOfCodeFiles": 47,
+        "linesTotal": 2088,
+        "linesOfCode": 2088,
+        "totalApiScanned": 0,
+        "minLinesOfCodeToChange": 0,
+        "maxLinesOfCodeToChange": 0
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "63b60a41-237e-4dcf-ae92-debe4fc0d605",
+          "ruleId": "NuGet.0003",
+          "projectPath": "src\\DotnetSitemapGenerator\\DotnetSitemapGenerator.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Xml.XmlSerializer, 4.3.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "System.Xml.XmlSerializer, 4.3.0\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "src\\DotnetSitemapGenerator\\DotnetSitemapGenerator.csproj",
+            "snippet": "System.Xml.XmlSerializer, 4.3.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "System.Xml.XmlSerializer, 4.3.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "System.Xml.XmlSerializer 4.3.0",
+            "properties": {
+              "PackageId": "System.Xml.XmlSerializer",
+              "PackageVersion": "4.3.0",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "18febb47-1a7d-40e4-a411-9d4ac4678208",
+          "ruleId": "NuGet.0003",
+          "projectPath": "src\\DotnetSitemapGenerator\\DotnetSitemapGenerator.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "System.Linq.Queryable, 4.3.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "System.Linq.Queryable, 4.3.0\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "src\\DotnetSitemapGenerator\\DotnetSitemapGenerator.csproj",
+            "snippet": "System.Linq.Queryable, 4.3.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "System.Linq.Queryable, 4.3.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "System.Linq.Queryable 4.3.0",
+            "properties": {
+              "PackageId": "System.Linq.Queryable",
+              "PackageVersion": "4.3.0",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "c0d8cd56-5308-49ad-8ef1-1e680c7c7b18",
+          "ruleId": "NuGet.0005",
+          "projectPath": "src\\DotnetSitemapGenerator\\DotnetSitemapGenerator.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.AspNetCore.Mvc, 1.1.8\n\nRecommendation:\n\nThis package has been deprecated as part of the .NET Package Deprecation effort. You can learn more about it from https://github.com/dotnet/announcements/issues/217\nRemove Microsoft.AspNetCore.Mvc, and replace with new package Microsoft.AspNetCore.Mvc, 2.3.9",
+              "protected": "Microsoft.AspNetCore.Mvc, 1.1.8\n\nRecommendation:\n\nThis package has been deprecated as part of the .NET Package Deprecation effort. You can learn more about it from https://github.com/dotnet/announcements/issues/217\nRemove Microsoft.AspNetCore.Mvc, and replace with new package Microsoft.AspNetCore.Mvc, 2.3.9"
+            },
+            "kind": "File",
+            "path": "src\\DotnetSitemapGenerator\\DotnetSitemapGenerator.csproj",
+            "snippet": "Microsoft.AspNetCore.Mvc, 1.1.8\n\nRecommendation:\n\nThis package has been deprecated as part of the .NET Package Deprecation effort. You can learn more about it from https://github.com/dotnet/announcements/issues/217\nRemove Microsoft.AspNetCore.Mvc, and replace with new package Microsoft.AspNetCore.Mvc, 2.3.9",
+            "protectedSnippet": "Microsoft.AspNetCore.Mvc, 1.1.8\n\nRecommendation:\n\nThis package has been deprecated as part of the .NET Package Deprecation effort. You can learn more about it from https://github.com/dotnet/announcements/issues/217\nRemove Microsoft.AspNetCore.Mvc, and replace with new package Microsoft.AspNetCore.Mvc, 2.3.9",
+            "label": "Microsoft.AspNetCore.Mvc 1.1.8",
+            "properties": {
+              "PackageId": "Microsoft.AspNetCore.Mvc",
+              "PackageVersion": "1.1.8",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        }
+      ],
+      "features": []
+    },
+    {
+      "path": "test\\DotnetSitemapGenerator.Tests\\DotnetSitemapGenerator.Tests.csproj",
+      "startingProject": true,
+      "issues": 2,
+      "storyPoints": 2,
+      "properties": {
+        "appName": "DotnetSitemapGenerator.Tests",
+        "projectKind": "ClassLibrary",
+        "frameworks": [
+          "netcoreapp3.1"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "numberOfFiles": 13,
+        "numberOfCodeFiles": 13,
+        "linesTotal": 1226,
+        "linesOfCode": 1226,
+        "totalApiScanned": 0,
+        "minLinesOfCodeToChange": 0,
+        "maxLinesOfCodeToChange": 0
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "c8dc0018-c518-47a4-a4f8-2f2c26e5da20",
+          "ruleId": "NuGet.0005",
+          "projectPath": "test\\DotnetSitemapGenerator.Tests\\DotnetSitemapGenerator.Tests.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "xunit, 2.9.3\n\nRecommendation:\n\nGuide for migrating from xUnit.net v2 to v3: https://xunit.net/docs/getting-started/v3/migration\nRemove xunit, and replace with new package xunit, 2.9.3",
+              "protected": "xunit, 2.9.3\n\nRecommendation:\n\nGuide for migrating from xUnit.net v2 to v3: https://xunit.net/docs/getting-started/v3/migration\nRemove xunit, and replace with new package xunit, 2.9.3"
+            },
+            "kind": "File",
+            "path": "test\\DotnetSitemapGenerator.Tests\\DotnetSitemapGenerator.Tests.csproj",
+            "snippet": "xunit, 2.9.3\n\nRecommendation:\n\nGuide for migrating from xUnit.net v2 to v3: https://xunit.net/docs/getting-started/v3/migration\nRemove xunit, and replace with new package xunit, 2.9.3",
+            "protectedSnippet": "xunit, 2.9.3\n\nRecommendation:\n\nGuide for migrating from xUnit.net v2 to v3: https://xunit.net/docs/getting-started/v3/migration\nRemove xunit, and replace with new package xunit, 2.9.3",
+            "label": "xunit 2.9.3",
+            "properties": {
+              "PackageId": "xunit",
+              "PackageVersion": "2.9.3",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "c2540d87-3e7a-4606-8473-cd1e55610693",
+          "ruleId": "Project.0002",
+          "projectPath": "test\\DotnetSitemapGenerator.Tests\\DotnetSitemapGenerator.Tests.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: netcoreapp3.1\nRecommended target framework: net10.0",
+              "protected": "Current target framework: netcoreapp3.1\nRecommended target framework: net10.0"
+            },
+            "kind": "File",
+            "path": "test\\DotnetSitemapGenerator.Tests\\DotnetSitemapGenerator.Tests.csproj",
+            "snippet": "Current target framework: netcoreapp3.1\nRecommended target framework: net10.0",
+            "protectedSnippet": "Current target framework: netcoreapp3.1\nRecommended target framework: net10.0",
+            "properties": {
+              "CurrentTargetFramework": "netcoreapp3.1",
+              "RecommendedTargetFramework": "net10.0"
+            }
+          }
+        }
+      ],
+      "features": []
+    },
+    {
+      "path": "test\\DotnetSitemapGenerator.Website\\DotnetSitemapGenerator.Website.csproj",
+      "startingProject": true,
+      "issues": 1,
+      "storyPoints": 1,
+      "properties": {
+        "appName": "DotnetSitemapGenerator.Website",
+        "projectKind": "AspNetCore",
+        "frameworks": [
+          "netcoreapp3.1"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "numberOfFiles": 12,
+        "numberOfCodeFiles": 10,
+        "linesTotal": 398,
+        "linesOfCode": 379,
+        "totalApiScanned": 0,
+        "minLinesOfCodeToChange": 0,
+        "maxLinesOfCodeToChange": 0
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "b103dae1-9073-43c3-8e22-398a0e7bd828",
+          "ruleId": "Project.0002",
+          "projectPath": "test\\DotnetSitemapGenerator.Website\\DotnetSitemapGenerator.Website.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: netcoreapp3.1\nRecommended target framework: net10.0",
+              "protected": "Current target framework: netcoreapp3.1\nRecommended target framework: net10.0"
+            },
+            "kind": "File",
+            "path": "test\\DotnetSitemapGenerator.Website\\DotnetSitemapGenerator.Website.csproj",
+            "snippet": "Current target framework: netcoreapp3.1\nRecommended target framework: net10.0",
+            "protectedSnippet": "Current target framework: netcoreapp3.1\nRecommended target framework: net10.0",
+            "properties": {
+              "CurrentTargetFramework": "netcoreapp3.1",
+              "RecommendedTargetFramework": "net10.0"
+            }
+          }
+        }
+      ],
+      "features": []
+    }
+  ],
+  "rules": {
+    "NuGet.0003": {
+      "id": "NuGet.0003",
+      "isFeature": false,
+      "description": "NuGet package functionality is included with framework reference.\n\nPackage needs to be removed.",
+      "label": "NuGet package functionality is included with framework reference",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262609",
+          "isCustom": false
+        }
+      ]
+    },
+    "NuGet.0005": {
+      "id": "NuGet.0005",
+      "isFeature": false,
+      "description": "NuGet package is deprecated.\n\nGo to its documentation and if there is a guidance for replacement of functionality provided by this package.",
+      "label": "NuGet package is deprecated",
+      "severity": "Optional",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262531",
+          "isCustom": false
+        }
+      ]
+    },
+    "Project.0002": {
+      "id": "Project.0002",
+      "isFeature": false,
+      "description": "Project\u0027s target framework(s) needs to be changed to the new target framework that you selected for this upgrade.\n\nDuring upgrade target framework will be adjusted to corresponding platform when applicable. In some cases project would result in multiple target frameworks after the upgrade if it was using features that now have their own platforms in modern .NET frameworks (windows, iOS, Android etc).",
+      "label": "Project\u0027s target framework(s) needs to be changed",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Overview of porting from .NET Framework to .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        },
+        {
+          "title": ".NET project SDKs",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265226",
+          "isCustom": false
+        }
+      ]
+    }
+  }
+}
