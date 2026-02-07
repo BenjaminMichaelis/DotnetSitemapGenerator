@@ -33,9 +33,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v5
       with:
-        dotnet-version: | 
-            6.x
-            3.1.x
+        global-json-file: global.json
     - name: Restore dependencies
       run: dotnet restore
     - name: Set Version
@@ -56,13 +54,13 @@ jobs:
       run: dotnet test --no-build --configuration Release --verbosity normal
     - name: Pack
       if: startsWith(github.ref, 'refs/tags/v')
-      run: dotnet pack -p:PackageVersion=${{ env.nugetVersion }} --configuration Release -o ${{env.DOTNET_ROOT}}/DotnetSitemapGenerator --no-build 
+      run: dotnet pack -p:PackageVersion=${{ env.nugetVersion }} --configuration Release -o ${{runner.temp}}/DotnetSitemapGenerator --no-build 
     - name: Upload Artifacts
       if: startsWith(github.ref, 'refs/tags/v')
       uses: actions/upload-artifact@v6
       with:
         name: NuGet
-        path: ${{env.DOTNET_ROOT}}/DotnetSitemapGenerator
+        path: ${{runner.temp}}/DotnetSitemapGenerator
       
   deploy:
     if: startsWith(github.ref, 'refs/tags/v')
